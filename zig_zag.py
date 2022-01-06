@@ -1,18 +1,15 @@
 T = int(input())
-P = 0
 
 for i in range(1, T+1):
     
     N = int(input())
-    
+    SUM = 0
     while N > 0:
         
         if N % 2 == 1:
-            P += N
-            
+            SUM += N
         else :
-            P -= N
-            
+            SUM -= N
         N -= 1
         
-    print(f'#{i} {P}')
+    print(f'#{i} {SUM}')
