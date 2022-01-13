@@ -16,11 +16,11 @@ class link_list:
 # lst = [1, 2, 3, 4, 5]
 # i in 1,2,3,4,5
 
-def make_node(lst, N):    # N은 수열의 길이
-    first = last = Node(lst[0])
+def make_node(lst, arr):    # N은 수열의 길이
+    first = last = Node(arr[0])
     
-    for i in lst[1:]:
-        new = Node(i, last)
+    for val in arr[1:]:
+        new = Node(val, last)
         last.next = new
         last = new
     
@@ -31,15 +31,7 @@ def make_node(lst, N):    # N은 수열의 길이
         current = lst.head
         
         while current != None:
-            if current.data 
-
-
-
-
-
-
-
-
+            # if current.data:
 
 
 

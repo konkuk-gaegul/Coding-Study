@@ -1,5 +1,6 @@
 # 함수
 def del_stack( A ):
+    
     top = -1
     
     for i in range( len(A) ):
