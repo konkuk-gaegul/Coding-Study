@@ -9,20 +9,5 @@ T = int(input())
 for tc in range(1,T+1):
     
     N, K = map(int, input().split())
-    List = list(map(int, input().split()) for _ in range(N))
-    cnt = 0
-    B = []
+    List = list(input().split() for _ in range(N))
     
-    # 가로(i) 방향
-    for j in range(N):
-        for i in range(N-K+1):
-            
-            if List[j][i] == 1 and List[j][i+1] == 1 and List[j][i+2] == 1:
-                cnt += 1
-    # 세로(j) 방향
-    for i in range(N):
-        for j in range(N-K+1):
-            if List[j][i] == 1 and List[j+1][i] == 1 and List[j+2][i] == 1:
-                cnt += 1
-                
-    print( f'#{tc} {cnt}' )
