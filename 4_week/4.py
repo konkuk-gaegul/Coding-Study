@@ -8,11 +8,14 @@ for tc in range(1, T+1):
     A = Pattern[0]     # 맨 첫 글자 저장
     
     for i in range(1, len(Pattern)):     # 두 번째 글자부터 마지막까지 반복
-        A += Pattern[i]
-        length = len(A)
+        A += Pattern[i]                  # A에 한 글자씩 넣어주기
+        length = len(A)                  
         
-        if A[0:(length/2)] == A[(length/2):]:
-            
+        if A[:int(length/2)] == A[int(length/2):]:  # 매회 A의 길이의 절반까지 슬라이스
+            break                                   # 남은 절반과 일치하는지 확인
+    print(f'#{tc} {int(length/2)}')                 # 일치하면 중단 후, A의 길이의
+                                                    # 절반 인덱스까지 반복 패턴으로 간주
+                                                    
 # 3
 # KOREAKOREAKOREAKOREAKOREAKOREA
 # SAMSUNGSAMSUNGSAMSUNGSAMSUNGSA
