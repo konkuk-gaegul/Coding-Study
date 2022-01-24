@@ -26,7 +26,7 @@ for tc in range(1,T+1):
     for i in range(N):
         cnt = 0
         for j in range(N):
-            if List[j][i] == 1:
+            if List[j][i] == 1:     # 하나씩 꺼내서 비교
                 cnt += 1
             if List[j][i] == 0 or j == N-1:
                 if cnt == K:
