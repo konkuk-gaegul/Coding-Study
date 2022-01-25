@@ -17,12 +17,12 @@ for tc in range(1, T+1):
             distance += speed       # 현재 속도의 단위 시간 이동거리
         
         elif a[0] == 1:             # 가속의 경우
-            speed = speed + a[1]    # 현재 속도에 가속도*1초 더해주기
+            speed = speed + a[1]    # 현재 속도에 가속도(m/s^2)*1(s) 더해주기
             distance += speed       
             
         elif a[0] == 2:             # 감속의 경우
-            speed = speed - a[1]    # 현재 속도에 가속도*1초 빼주기
-            if speed < 0:           # 속도가 0이하, 후진하는 경우
+            speed = speed - a[1]    # 현재 속도에 가속도(m/s^2)*1(s) 빼주기
+            if speed < 0:           # 속도가 0이하인 후진하는 경우
                 speed = 0           # 속도는 0으로 보정
             distance += speed
             
