@@ -13,13 +13,28 @@ for tc in range(1,T+1):
     for i in range(N):
         for j in range(N):                  # 입력한 matrix의 j = 2 -> 1 -> 0
             mat_90[i][j] = matrix[N-j-1][i] # 패턴 파악 후, 행/열 순서대로 입력
-    
+            
+    # mat_90을 90도 돌린다
     for i in range(N):
         for j in range(N):
-            mat_180[i][j] = mat_90[N-j-1][i]    
-    
+            mat_180[i][j] = mat_90[N-j-1][i]
+            
+    # mat_180을 90도 돌린다
     for i in range(N):
         for j in range(N):
             mat_270[i][j] = mat_180[N-j-1][i]
     
-    print(f'{mat_90} {mat_180} {mat_270}')
+    print(f'#{tc}')
+    # 각 행렬의 한 행씩 띄어쓰기를 구분으로 출력
+    for i in range(N):
+        for a in range(N):
+            print(mat_90[i][a], end = '') # 행의 요소들을 연이어서 출력
+        print(end=' ')
+        
+        for b in range(N):
+            print(mat_180[i][b], end = '')
+        print(end=' ')
+        
+        for c in range(N):
+            print(mat_270[i][c], end = '')
+        print() # 줄 바꿈
