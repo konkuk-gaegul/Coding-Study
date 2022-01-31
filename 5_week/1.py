@@ -11,12 +11,12 @@ for tc in range(1,T+1):
     mat_270 = [ [0 for _ in range(3)] for _ in range(3)]    # 0행렬 생성
     
     for i in range(N):
-        for j in range(N):
-            mat_90[i][j] = matrix[N-j-1][i]
+        for j in range(N):                  # 입력한 matrix의 j = 2 -> 1 -> 0
+            mat_90[i][j] = matrix[N-j-1][i] # 패턴 파악 후, 행/열 순서대로 입력
     
     for i in range(N):
         for j in range(N):
-            mat_180[i][j] = mat_90[N-j-1][i]
+            mat_180[i][j] = mat_90[N-j-1][i]    
     
     for i in range(N):
         for j in range(N):
