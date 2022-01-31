@@ -9,11 +9,11 @@ for tc in range(1, T+1):
     
     for j in range(N):  # j = [0,1,2,3,4]
         if j < int(N/2):
-            A = List[j][ int(N/2)-j : int(N/2)+j+1 ]
-            cnt += sum(A)
+            A = List[j][ int(N/2)-j : int(N/2)+j+1 ]    # 중간 인덱스인 int(N/2)를
+            cnt += sum(A)                               # 기준으로 0,1,2,...씩 넓혀진다.
             
-        if j == int(N/2):
-            A = List[j]
+        if j == int(N/2):   
+            A = List[j]     # 중간 열은 모든 원소를 더해준다.
             cnt += sum(A)
             
         if j > int(N/2):
