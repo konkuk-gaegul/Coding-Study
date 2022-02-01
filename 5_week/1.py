@@ -38,3 +38,5 @@ for tc in range(1,T+1):
         for c in range(N):
             print(mat_270[i][c], end = '')
         print() # 줄 바꿈
+        
+    
