@@ -13,4 +13,4 @@ for i in range(N):
             
 for row in matrix:
     result = [x for x in row if x]  # matrix의 row 중에서 True인 값들을 넣는다.
-    print(*result)
+    print(*result)                  # 줄 간격 유지하며 출력
