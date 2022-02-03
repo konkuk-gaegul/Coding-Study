@@ -10,11 +10,12 @@ for tc in range(1, T+1):
     while dump < n:
         max_ = max(lst)
         min_ = min(lst)
+        dif = max_ - min_
         
         max_ -= 1   # 덤프
         min_ += 1   # 과정
-        n += 1      # 덤프 횟수 1증가
+        dump += 1   # 덤프 횟수 1증가
         
-        
+        if dif <= 1: break
     
-print(lst, max_, min_)
+print(f'#{tc} {dif}')
