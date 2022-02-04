@@ -4,18 +4,15 @@ for tc in range(1, T+1):
     n = int(input())    # 최대 덤프 횟수 834
     lst = list( map( int, input().split() ) )
     lst.sort()
-
-    dump = 0    # 덤프 횟수
     
-    while dump <= n:
+    for _ in range(n):
         
         max_ = lst.index( max(lst) )
         min_ = lst.index( min(lst) )
         
         lst[max_] -= 1
         lst[min_] += 1
-        dump += 1
-        
+
         dif = max(lst) - min(lst)
         
 print(f'#{tc} {dif}')
