@@ -12,7 +12,7 @@ for tc in range(1, T+1):
         
         lst[max_] -= 1
         lst[min_] += 1
-
+        
         dif = max(lst) - min(lst)
         
 print(f'#{tc} {dif}')
