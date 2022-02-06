@@ -1,16 +1,19 @@
 # 최대한 많은 파리를 죽이자!
 # NxN 행렬에서 MxM으로 최대한 많은 수를 찾자
 def kill_flies(lst, n, m):
-    ma = [0]
+    # MxM에 해당하는 원소들을 하나씩 추가한다
+    ma = []
+    # 이렇게 모인 ma의 M*M개의 원소를 모두 더한다
+    total = []
     for j in range(n-m+1):
         for i in range(n-m+1):
             for a in range(j,j+m):
                 for b in range(i,i+m):
                     ma.append(lst[a][b])
-            total = sum(ma)
-            ma = [0]
-
-    return max(ma)
+            total.append(sum(ma))
+            ma = []
+            
+    return max(total)
 
 T = int(input())
 for tc in range(1, T+1):
