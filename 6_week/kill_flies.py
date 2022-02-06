@@ -2,16 +2,15 @@
 # NxN 행렬에서 MxM으로 최대한 많은 수를 찾자
 def kill_flies(lst, n, m):
     ma = [0]
-    for j in range(n-1):
-        for i in range(n-1):
-            for a in range(j,j+2):
-                for b in range(i,i+2):
+    for j in range(n-m+1):
+        for i in range(n-m+1):
+            for a in range(j,j+m):
+                for b in range(i,i+m):
                     ma.append(lst[a][b])
-                    total = sum(ma)
-        if ma[0] < total:
-            ma[0] = total
-    
-    return ma[0]
+            total = sum(ma)
+            ma = [0]
+
+    return max(ma)
 
 T = int(input())
 for tc in range(1, T+1):
