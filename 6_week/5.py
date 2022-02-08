@@ -11,22 +11,33 @@ for tc in range(1):
     matrix = [list(map(int, input().split())) for _ in range(N)]
     A = []
     c = []
+    d = []
     # 행의 합
     for j in range(N):
-        a = matrix[j]
-        A.append(sum(a))
+        a = sum(matrix[j])
+        A.append( a )
         
     # 열의 합
     for i in range(N):
-        b = matrix[j]
-        A.append(sum(b))
+        col = 0
+        b = []
+        for j in range(N):
+            b.append(matrix[j][i])
+        col = sum(b)
+        A.append( col )
         
-    # 대각 합
-    for j in range(N):
-        for i in range(j):
-            c.append(matrix[j][i])
-        A.append(sum(c))
-        
-    D = max(A, B, C)
+    # # 좌상->우하 대각
+    # for j in range(N):
+    #     for i in range(j,j+1):
+    #         c.append(matrix[j][i])
+    # A.append(sum(c))
     
-print(f'#{T} {D}')
+    # # 우상->좌하 대각
+    # for j in range(N):
+    #     for i in range(-(j+1),-(j+2),-1):
+    #         d.append(matrix[j][i])
+    # A.append(sum(d))
+    
+    # D = max(A)
+    
+print(f'#{T} {A}')
