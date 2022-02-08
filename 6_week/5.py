@@ -3,11 +3,8 @@
 # 가장 큰 값을 출력하라!
 
 for tc in range(1):
-    # T = int(input())
-    T = 1
-    
-    # 연습삼아 3x3
-    N = 3
+    T = int(input())
+    N = 100
     matrix = [list(map(int, input().split())) for _ in range(N)]
     A = []
     c = []
@@ -26,18 +23,18 @@ for tc in range(1):
         col = sum(b)
         A.append( col )
         
-    # # 좌상->우하 대각
-    # for j in range(N):
-    #     for i in range(j,j+1):
-    #         c.append(matrix[j][i])
-    # A.append(sum(c))
+    # 좌상->우하 대각
+    for j in range(N):
+        for i in range(j,j+1):
+            c.append(matrix[j][i])
+    A.append(sum(c))
     
-    # # 우상->좌하 대각
-    # for j in range(N):
-    #     for i in range(-(j+1),-(j+2),-1):
-    #         d.append(matrix[j][i])
-    # A.append(sum(d))
+    # 우상->좌하 대각
+    for j in range(N):
+        for i in range(-(j+1),-(j+2),-1):
+            d.append(matrix[j][i])
+    A.append(sum(d))
     
-    # D = max(A)
+    D = max(A)
     
-print(f'#{T} {A}')
+print(f'#{T} {D}')
