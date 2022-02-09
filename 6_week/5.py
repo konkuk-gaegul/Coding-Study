@@ -2,9 +2,8 @@
 # 각 행, 열, 대각의 합 중
 # 가장 큰 값을 출력하라!
 for tc in range(1):
-    # T = int(input())
-    # N = 100
-    N = 3
+    T = int(input())
+    N = 100
     matrix = [list(map(int, input().split())) for _ in range(N)]
     total = []  # 각 행/열/대각의 합을 나열
     c = []  # 좌상->우하 대각
@@ -25,11 +24,10 @@ for tc in range(1):
         total.append( col )
         
     # 좌상->우하 대각
-    diag_1 = 0
+    diag_1 = 0  # 원소 하나씩 더하는 방법
     for j in range(N):
         for i in range(j,j+1):
             diag_1 += matrix[j][i]
-    total.append(sum(c))
     
     # 우상->좌하 대각
     for j in range(N):
@@ -37,5 +35,4 @@ for tc in range(1):
             d.append(matrix[j][i])
     total.append(sum(d))
     
-# print(f'# {max(total)}')
-print(f'# {diag_1}')
+print(f'# {max(total)}')
