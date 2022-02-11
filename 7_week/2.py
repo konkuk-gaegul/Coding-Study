@@ -1,4 +1,7 @@
-A = ['hello','\n','world']
+A = ['a', '\n', 'c']
+B = ''
+for i in range(len(A)):
+    B += A[i]
 
-print(f'{A}')
 
+print(B)
