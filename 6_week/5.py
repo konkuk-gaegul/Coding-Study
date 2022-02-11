@@ -11,8 +11,8 @@ for tc in range(1):
     
     # 행의 합
     for j in range(N):
-        a = sum(matrix[j])
-        total.append( a )
+        row = sum(matrix[j])    # row는 각 행의 모든 원소의 합
+        total.append( row )     # total.append( sum(matrix[j]))
         
     # 열의 합
     for i in range(N):
