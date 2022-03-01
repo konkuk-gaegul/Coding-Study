@@ -27,3 +27,11 @@ for tc in range(1, T+1):
         money[i] = wallet    # (지출, 구매횟수)로 입력
         sale.append( pur_num * lst[-1] + money[i] )
     print(f'#{tc} {max(sale)}')
+    
+# 3
+# 3
+# 10 7 6
+# 3
+# 3 5 9
+# 5
+# 1 1 3 1 2
