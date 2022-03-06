@@ -7,18 +7,24 @@
 T = int(input())
 for tc in range(1, T+1):
     num_list = list(map(int, input().split()))
-    # num_list = [10, 6, 12, 8, 9, 4, 1, 3]
+    
     n = 1
-    while True:
-        if n == 6: n = 1
+    while num_list[-1] != 0:
+        if n == 6: n = 1    # 계속 1씩 증가하는 n을 6이되면 1로 되돌려준다.
         
         num_temp = num_list[0] - n
                 
-        if num_temp <= 0:
-            num_temp = 0
+        if num_temp <= 0:   # n을 뺐는데, 0또는 그 이하가 되면
+            num_temp = 0    # 0으로 변환
                 
-        num_list.remove( num_list[0] )
-        num_list.append(num_temp)
-        n += 1
-        if num_list[-1] == 0: break
+        num_list.remove( num_list[0] )  # 첫 인덱스를 제거 후,
+        num_list.append(num_temp)       # 마지막 인덱스로 보낸다.
+        n += 1  # while문에 의해 n은 계속 1씩 증가
+            
     print(f'#{tc} {num_list}')
+
+# test case
+# 9550 9556 9550 9553 9558 9551 9551 9551
+# 6 2 2 9 4 1 3 0
+# 2419 2418 2423 2415 2422 2419 2420 2415
+# 9 7 9 5 4 3 8 0
