@@ -8,8 +8,6 @@
 # 1 1 1 1 1 1 1 1 1 100
 # 7 
 # 2 7 1 8 2 8 4
-import numpy as np
-
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
