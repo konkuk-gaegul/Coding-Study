@@ -5,25 +5,27 @@
 # bdppq
 # qqqqpppbbd
 T = int(input())
-test_case = list(input())
 
 str_dic = {'b' : 'd',
            'd' : 'b',
            'p' : 'q',
            'q' : 'p'}
+
 keys   = list(str_dic.keys())
 values = list(str_dic.values())
 
 
 for tc in range(1, T+1):
+    test_case = list(input())
+    temp = []
     
-    temp = test_case
-    val = 0
-    for key in keys:
-        temp[temp == key] = values[val]
-        val += 1
-    
-    mirrored_case = temp[-1::-1]
-    
-
-print(f'#{tc} {mirrored_case}')
+    # val = 0
+    for i in range(len(test_case)):
+        
+        idx = keys.index( test_case[i] )    # test_case의 현재 문자의 인덱스
+        temp.append( values[idx] )          # 위 인덱스에 맞는 value (d -> d)
+            
+        mirrored_case = temp[-1::-1]        # 거꾸로 뒤집기
+        
+        
+    print('#',tc, ' ',*mirrored_case, sep = '')
