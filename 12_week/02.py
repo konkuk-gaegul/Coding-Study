@@ -11,7 +11,7 @@ for test_case in range(T):
     # 은비가 가진 C원으로 각 빵만 최대 몆 개 살 수 있는지
     a = tc[2] // tc[0]
     b = tc[2] // tc[1]
-    # (a, b) 경우의 수를 만들어보자
+    # 예산을 만족하는 경우의 수를 cnt에 각각 저장
     cnt = []
     for i in range(0, a+1):
         for j in range(0, b+1):
