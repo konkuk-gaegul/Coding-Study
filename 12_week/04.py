@@ -13,10 +13,9 @@ for test_case in range(1, T+1):
     for change_num in range(1, Q+1):
         L, R = map(int, input().split())
         
-        i = 0
+        i = 0   # num_list 내에서 인덱스를 하나씩 증가시키기 위한 보정
         for _ in range(R-L+1):
-            print(L-1+i)
-            num_list[L-1+i] = change_num
+            num_list[L-1+i] = change_num # = i
             i += 1
         
-        print( num_list )
+    print( '#', ' ', test_case, *num_list, sep='' )
