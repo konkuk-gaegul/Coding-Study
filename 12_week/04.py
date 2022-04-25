@@ -14,7 +14,8 @@ for test_case in range(1, T+1):
         L, R = map(int, input().split())
         
         i = 0
-        for _ in range(R):
+        for _ in range(R-L+1):
+            print(L-1+i)
             num_list[L-1+i] = change_num
             i += 1
         
