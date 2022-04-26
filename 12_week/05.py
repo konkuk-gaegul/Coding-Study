@@ -23,19 +23,18 @@ for test_case in range(1, T+1):
     
     # 현재 인덱스 : 연속된 두 문자를 삭제하면 유지, 그대로면 1증가
     i = 0
-    print(lst)
-    while i < len(lst):
+    temp = lst.copy()
+    while i < len(temp):
         # 연속된 두 문자가 다른 경우
-        if lst[i] != lst[i+1]:
+        print(i)
+        if temp[i] != temp[i+1]:
             i += 1
         # 연속된 두 문자가 같은 경우
-        else:
-            del lst[i:2]
-            i =  i
-    result = lst
-    # 아무것도 남지 않은 경우 'Good'출력
-    if len(result) == 0:
-        result = 'Good'
+        elif temp[i] == temp[i+1]:
+            del temp[i:2]
+            i = 0
+        print(temp)
+    
     else:
         # 사전 순으로 정렬 (오름차순)
-        print(result.sort())
+        print( 'Good' if len(temp) == 0 else temp )
