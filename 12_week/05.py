@@ -35,8 +35,10 @@ for test_case in range(1, T+1):
             i = 0
         print(temp)
     
-    result = temp.sort()
-    result = ''.join(s for s in temp)
-    
-    # 사전 순으로 정렬 (오름차순)
-    print( 'Good' if len(temp) == 0 else result )
+    # 사전 순(오름차순) 정렬
+    if len(temp) == 0:
+        print('Good')
+    else:
+        result = temp.sort()
+        result = ''.join(s for s in temp)
+        print(f'#{test_case} {result}')
