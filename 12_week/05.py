@@ -9,12 +9,12 @@
 # 각 테스트 케이스 마다 남는 문자를 사전 순서대로 출력한다.
 # 어떤 문자도 남지 않는다면 “Good”을 출력하도록 한다.
 
-# xxyyzz
-# yc
-# aaaab
-# bca
-# ppzqq
-# qnwerrewmq
+# xxyyzz      >  Good
+# yc          >  cy
+# aaaab       >  b
+# bca         >  abc
+# ppzqq       >  z
+# qnwerrewmq  >  Good
 
 T = int(input())
 for test_case in range(1, T+1):
@@ -24,17 +24,19 @@ for test_case in range(1, T+1):
     # 현재 인덱스 : 연속된 두 문자를 삭제하면 유지, 그대로면 1증가
     i = 0
     temp = lst.copy()
-    while i < len(temp):
+    while i < len(temp) - 1:
         # 연속된 두 문자가 다른 경우
         print(i)
         if temp[i] != temp[i+1]:
             i += 1
         # 연속된 두 문자가 같은 경우
         elif temp[i] == temp[i+1]:
-            del temp[i:2]
+            del temp[i:i+2]
             i = 0
         print(temp)
     
-    else:
-        # 사전 순으로 정렬 (오름차순)
-        print( 'Good' if len(temp) == 0 else temp )
+    result = temp.sort()
+    result = ''.join(s for s in temp)
+    
+    # 사전 순으로 정렬 (오름차순)
+    print( 'Good' if len(temp) == 0 else result )
