@@ -26,23 +26,44 @@
 # (2,2) = 5
 # (3,1) = 6
 # ----------
-# (1,4) = 7
-# (2,3) = 8
-# (3,2) = 9
-# (4,1) = 10
-# ----------
+# 2
+# 1 5
+# 3 9
 # # T = int(input())
-for test_case in range(1, 2):
+def star_operator(max_num, N, M):
     cordinate = [ ['x','y','j'] ]
     i = 1   # 현재 x, y좌표의 최대값
     j = 1   # 현재 좌표에 할당된 번호
-    max_num = 1
-    while j < 7:
+    
+    while j <= max_num:     # 100번 이하만 수집
         # x, y좌표
         X, Y = range(1, i+1), range(i, 0, -1)
+        
         for k in range(i):
-            cordinate.append( [ X[k] , Y[k] , j ] )
+            cordinate.append( [ X[k] , Y[k] , j] )
             j += 1
+            if j > max_num:
+                break
+        
             if k == i-1:
                 i += 1
-    print(cordinate)
+        
+    for row in cordinate:
+        if row[2] == N:
+            A = [row[0], row[1]]    # x, y좌표
+        if row[2] == M:
+            B = [row[0], row[1]]    # x, y좌표
+    C = [A[0]+B[0], A[1]+B[1]]
+    
+    for row in cordinate:
+        if row[0] == C[0] and row[1] == C[1]:
+            num = row[2]
+    
+    # return print(f'A좌표: {A}, B좌표: {B}, C좌표: {C}, 순번: {num}')
+    return print(f'#{test_case} {num}')
+
+max_num = 100
+T = int(input())
+for test_case in range(1, T+1):
+    N, M = map(int, input().split())
+    star_operator(max_num, N, M)
