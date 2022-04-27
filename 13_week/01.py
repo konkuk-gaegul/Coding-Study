@@ -29,11 +29,8 @@ for test_case in range(1, T+1):
     
     for i in range(1, len(num_array)-1):
         
-        temp = num_array[i-1:i+2]
-        print(temp)
-        print(max(temp))
-        print(min(temp))
-        if num_array[i] != max(temp) and num_array[i] != min(temp):
+        temp_array = num_array[i-1:i+2]
+        if num_array[i] != max(temp_array) and num_array[i] != min(temp_array):
             cnt += 1
     
     print(f'#{test_case} {cnt}')
