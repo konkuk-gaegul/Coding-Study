@@ -20,20 +20,20 @@ T = int(input())
 for test_case in range(1, T+1):
     
     lst = list(input())
-    
     # 현재 인덱스 : 연속된 두 문자를 삭제하면 유지, 그대로면 1증가
     i = 0
     temp = lst.copy()
+    
+    # list index out of range 방지를 위해 
+    # (현재 문자열 길이 - 1) 로 최대 인덱스를 보정
     while i < len(temp) - 1:
         # 연속된 두 문자가 다른 경우
-        print(i)
         if temp[i] != temp[i+1]:
             i += 1
         # 연속된 두 문자가 같은 경우
         elif temp[i] == temp[i+1]:
             del temp[i:i+2]
             i = 0
-        print(temp)
     
     # 사전 순(오름차순) 정렬
     if len(temp) == 0:
