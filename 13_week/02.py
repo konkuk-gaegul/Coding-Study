@@ -31,20 +31,22 @@
 # 3 9
 # # T = int(input())
 def star_operator(max_num, N, M):
-    cordinate = [ ['x','y','j'] ]
+    # 좌표를 하기와 같은 형식으로 저장한다.
     i = 1   # 현재 x, y좌표의 최대값
     j = 1   # 현재 좌표에 할당된 번호
+    cordinate = [ ['x','y','j'] ]
     
     while j <= max_num:     # 100번 이하만 수집
         # x, y좌표
-        X, Y = range(1, i+1), range(i, 0, -1)
+        X, Y = range(1, i+1), range(i, 0, -1)   # x는 1씩 증가, y는 1씩 감소하는 방식
         
         for k in range(i):
             cordinate.append( [ X[k] , Y[k] , j] )
+            # 좌표가 cordinate에 추가되면 순번(j)은 1씩 증가
             j += 1
-            if j > max_num:
+            if j > max_num: # max_num 까지만 제한
                 break
-        
+            # 한 개 세트를 표현
             if k == i-1:
                 i += 1
         
