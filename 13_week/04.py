@@ -18,6 +18,9 @@
 # 11 3 7
 from datetime import datetime
 
-date_day = datetime.strptime("20111111123456", "%Y%m%d")
+date_day = datetime.strptime("2011-11-11 11:11", "%Y-%m-%d %H:%M")
 
-print(f'태혁이의 데이트 날짜 : {date_day}')
+Day, Hour, Min = map(int, input().split())
+date_compared = datetime.strptime("2011-11-Day Hour:Min", "%Y-%m-%d %H:%M")
+
+print(f'태혁이의 데이트 날짜 차이 : {date_compared - date_day}')
